@@ -39,7 +39,7 @@ public class Recursion{
         if (exponent == 0){
             return 1;
         }
-        else if(exponent == 1){
+        if(exponent == 1){
             return base;
         }
         else{
@@ -57,6 +57,43 @@ public class Recursion{
         }
     }
 
+    //6th reversing a String
+    public static String revString(String a){
+        if (a == null){
+            return "Enter a valid string";
+        }
+        if (a.length() <= 1){
+            return a;
+        }
+        else{
+            return a.charAt(a.length() - 1) + revString(a.substring(0, a.length()-1));
+        }
+    }
+    
+    //7th Palindrome
+    public static boolean isPalindrome(String a){
+        if (a == null){
+            return false;
+        }
+
+        a = a.toLowerCase();
+
+        if (a.length() <= 1){
+            return true;
+        }
+        if (a.charAt(0) != a.charAt(a.length() - 1)){
+            return false;
+        }
+        else {
+            return isPalindrome(a.substring(1, a.length() - 1));
+        }
+    }
+
+    //8th Problem BinarytoDecimal
+    //public static int binarytoDecimal(){
+
+    //}
+
 
 
     public static void main(String[] args) {
@@ -65,6 +102,9 @@ public class Recursion{
         System.out.println(Fibonacci(4));
         System.out.println(power(5, 3));
         System.out.println(sumDigits(12345));
+        System.out.println(revString("12345"));
+        System.out.println(revString("Faizan"));
+        System.out.println(isPalindrome("Racecar"));
 
     }
 }
