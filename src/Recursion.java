@@ -102,6 +102,17 @@ public class Recursion{
 
     }
 
+//eg. {1,2,3}; index = 1
+    //9th Problem Summing the array
+    public static int sumArray(int[] array, int index){
+        if(index == array.length){
+            return 0;
+        }
+        else{
+            return array[index] + sumArray(array, index+1);
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -113,7 +124,9 @@ public class Recursion{
         System.out.println(revString("12345"));
         System.out.println(revString("Faizan"));
         System.out.println(isPalindrome("Racecar"));
-        System.out.println(binarytoDecimal("1111"));
+        System.out.println(binarytoDecimal("1000"));
+        System.out.println(sumArray(new int[]{1, 2, 3, 4, 5}, 0));
+
 
     }
 }
