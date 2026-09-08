@@ -90,9 +90,17 @@ public class Recursion{
     }
 
     //8th Problem BinarytoDecimal
-    //public static int binarytoDecimal(){
+    public static int binarytoDecimal(String a){
+        if (a.length() == 0){
+            return 0;
+        }
 
-    //}
+        else{
+            int dig = a.charAt(0) - '0';
+            return dig * (int)Math.pow(2, a.length() -1) + binarytoDecimal(a.substring(1));
+        }
+
+    }
 
 
 
@@ -105,6 +113,7 @@ public class Recursion{
         System.out.println(revString("12345"));
         System.out.println(revString("Faizan"));
         System.out.println(isPalindrome("Racecar"));
+        System.out.println(binarytoDecimal("1111"));
 
     }
 }
