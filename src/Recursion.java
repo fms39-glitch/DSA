@@ -114,6 +114,13 @@ public class Recursion{
     }
 
 
+    // --- Solved 4 leet code problems ---
+        // 509. Fibonnacci (easy recursive)
+        // 231. Power of Two (easy recursive)
+        // 326. Power of Three (easy recursive)
+        // 342. power of Four (easy  recursive)
+
+
 
     public static void main(String[] args) {
         System.out.println(sum(5));
