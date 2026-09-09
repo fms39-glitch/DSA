@@ -114,11 +114,12 @@ public class Recursion{
     }
 
 
-    // --- Solved 4 leet code problems ---
+    // --- Solved 5 leet code problems ---
         // 509. Fibonnacci (easy recursive)
         // 231. Power of Two (easy recursive)
         // 326. Power of Three (easy recursive)
         // 342. power of Four (easy  recursive)
+        //  50. Pow(x, n) (medium)
 
 
 
