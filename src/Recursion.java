@@ -120,7 +120,7 @@ public class Recursion{
         // 326. Power of Three (easy recursive)
         // 342. power of Four (easy  recursive)
         //  50. Pow(x, n) (medium)
-        //2094. Finding 3-Digit Even Numbers (Easy)
+        //2094. Finding 3-Digit Even Numbers (Easy) (non recursively)
 
 
 
