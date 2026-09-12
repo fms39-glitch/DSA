@@ -142,6 +142,16 @@ public class Recursion{
 		}
 	}
 
+    //13th 8.3.4 Log problem
+    public static int log(int base, int num) {
+		if(num <= 1) {
+			return 0;
+		}
+		return 1+log(base,num/base);
+	}
+
+    
+
 
     // --- Solved 6 leet code problems ---
         // 509. Fibonnacci (easy recursive)
@@ -170,6 +180,8 @@ public class Recursion{
 		System.out.println(multiply(2, 6));
         System.out.println(GCD(9, 81));
 		System.out.println(GCD(36, 6));
+        System.out.println(log(10,100));
+		System.out.println(log(2,4));
 
 
     }
