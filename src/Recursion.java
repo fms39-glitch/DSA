@@ -121,13 +121,24 @@ public class Recursion{
         }
     }
 
-    // 11th Multiply
+    // 11th 8.3.3 Multiply
     public static int multiply(int x, int y) {
 		if (x == 0) {
 			return 0;
 		}
 		else {
 			return multiply(x-1, y) + y;
+		}
+	}
+
+    //12th 8.3.4 GCD 
+    public static int GCD(int x, int y) {
+		if(y == 0) {
+			return x;
+		}
+		
+		else {
+			return GCD(y, x%y);
 		}
 	}
 
@@ -157,6 +168,8 @@ public class Recursion{
 		System.out.println(largest(new int[] {8,2,9}, 2));
         System.out.println(multiply(6, 6));
 		System.out.println(multiply(2, 6));
+        System.out.println(GCD(9, 81));
+		System.out.println(GCD(36, 6));
 
 
     }
