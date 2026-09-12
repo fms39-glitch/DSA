@@ -102,7 +102,7 @@ public class Recursion{
 
     }
 
-    //Largext num in an Array the index is defaulted to the numbers.length - 1
+    //9th 8.3.2 Largext num in an Array the index is defaulted to the numbers.length - 1
     public static int largest(int[] numbers, int index) {
 		if (index == 0) {
 			return numbers[0];
@@ -111,7 +111,7 @@ public class Recursion{
 	}
 
 //eg. {1,2,3}; index = 1
-    //9th Problem Summing the array
+    //10th Problem Summing the array
     public static int sumArray(int[] array, int index){
         if(index == array.length){
             return 0;
@@ -120,6 +120,16 @@ public class Recursion{
             return array[index] + sumArray(array, index+1);
         }
     }
+
+    // 11th Multiply
+    public static int multiply(int x, int y) {
+		if (x == 0) {
+			return 0;
+		}
+		else {
+			return multiply(x-1, y) + y;
+		}
+	}
 
 
     // --- Solved 6 leet code problems ---
@@ -145,6 +155,8 @@ public class Recursion{
         System.out.println(sumArray(new int[]{1, 2, 3, 4, 5}, 0));
         System.out.println(largest(new int[] {8,2,2}, 2));
 		System.out.println(largest(new int[] {8,2,9}, 2));
+        System.out.println(multiply(6, 6));
+		System.out.println(multiply(2, 6));
 
 
     }
