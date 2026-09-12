@@ -168,6 +168,16 @@ public class Recursion{
 		return Math.min(numbers[startIndex], recursiveMin(numbers, startIndex + 1));
 	}
 
+    //16th 8.5.3 decimal to binary
+	
+	public static String decToBinary(int num) {
+		
+		if (num < 2) {
+			return Integer.toString(num);
+		}
+		return decToBinary(num/2) + num%2;
+	}
+
 
 
 
@@ -204,7 +214,8 @@ public class Recursion{
 		System.out.println(sumtok(10));
         System.out.println(recursiveMin(new int[] {2, 4, 8}, 0));
 		System.out.println(recursiveMin(new int[] {233,201,110}, 0));
-
+        System.out.println(decToBinary(13));
+		System.out.println(decToBinary(63));
 
     }
 }
