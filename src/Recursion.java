@@ -178,6 +178,14 @@ public class Recursion{
 		return decToBinary(num/2) + num%2;
 	}
 
+    //17th 8.6.1 Cannon Ball 
+	public static int cannonball(int height) {
+	    if (height <= 0) {
+	        return 0;
+	    }
+	    return height * height + cannonball(height - 1);
+	}
+
 
 
 
@@ -216,6 +224,8 @@ public class Recursion{
 		System.out.println(recursiveMin(new int[] {233,201,110}, 0));
         System.out.println(decToBinary(13));
 		System.out.println(decToBinary(63));
+        System.out.println(cannonball(3));
+		System.out.println(cannonball(2));
 
     }
 }
