@@ -142,7 +142,7 @@ public class Recursion{
 		}
 	}
 
-    //13th 8.3.4 Log problem
+    //13th 8.3.5 Log problem
     public static int log(int base, int num) {
 		if(num <= 1) {
 			return 0;
@@ -150,7 +150,17 @@ public class Recursion{
 		return 1+log(base,num/base);
 	}
 
-    
+    //14 8.3.6 Sum to K problem
+    public static int sumtok(int k) {
+		if(k <= 0) {
+			return 0;
+		}
+		else {
+			return k+sumtok(k-1);
+		}
+	}
+
+
 
 
     // --- Solved 6 leet code problems ---
@@ -182,6 +192,8 @@ public class Recursion{
 		System.out.println(GCD(36, 6));
         System.out.println(log(10,100));
 		System.out.println(log(2,4));
+        System.out.println(sumtok(5));
+		System.out.println(sumtok(10));
 
 
     }
