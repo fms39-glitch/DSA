@@ -150,7 +150,7 @@ public class Recursion{
 		return 1+log(base,num/base);
 	}
 
-    //14 8.3.6 Sum to K problem
+    //14th 8.3.6 Sum to K problem
     public static int sumtok(int k) {
 		if(k <= 0) {
 			return 0;
@@ -158,6 +158,14 @@ public class Recursion{
 		else {
 			return k+sumtok(k-1);
 		}
+	}
+
+    //15th 8.5.1 minimum element in an Array.
+	public static int recursiveMin(int[] numbers, int startIndex) {
+		if (startIndex == numbers.length - 1) {
+			return numbers[startIndex];
+		}
+		return Math.min(numbers[startIndex], recursiveMin(numbers, startIndex + 1));
 	}
 
 
@@ -194,6 +202,8 @@ public class Recursion{
 		System.out.println(log(2,4));
         System.out.println(sumtok(5));
 		System.out.println(sumtok(10));
+        System.out.println(recursiveMin(new int[] {2, 4, 8}, 0));
+		System.out.println(recursiveMin(new int[] {233,201,110}, 0));
 
 
     }
