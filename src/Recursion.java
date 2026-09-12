@@ -102,6 +102,14 @@ public class Recursion{
 
     }
 
+    //Largext num in an Array the index is defaulted to the numbers.length - 1
+    public static int largest(int[] numbers, int index) {
+		if (index == 0) {
+			return numbers[0];
+		}
+		return Math.max(numbers[index], largest(numbers, index-1));
+	}
+
 //eg. {1,2,3}; index = 1
     //9th Problem Summing the array
     public static int sumArray(int[] array, int index){
@@ -135,6 +143,8 @@ public class Recursion{
         System.out.println(isPalindrome("Racecar"));
         System.out.println(binarytoDecimal("1000"));
         System.out.println(sumArray(new int[]{1, 2, 3, 4, 5}, 0));
+        System.out.println(largest(new int[] {8,2,2}, 2));
+		System.out.println(largest(new int[] {8,2,9}, 2));
 
 
     }
