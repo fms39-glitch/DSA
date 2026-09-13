@@ -186,6 +186,20 @@ public class Recursion{
 	    return height * height + cannonball(height - 1);
 	}
 
+    //18th 8.5.2 Is reverse
+    public static boolean isReverse(String s1, String s2) {
+	    if (s1.length() == 0 && s2.length() == 0)
+	        return true;
+	    else if (s1.length() != s2.length())
+	        return false;
+	    else {
+	        String s1first = s1.substring(0, 1);
+	        String s2last = s2.substring(s2.length() - 1);
+	        return s1first.equals(s2last) &&
+	               isReverse(s1.substring(1), s2.substring(0, s2.length() - 1));
+	    }
+	}
+
 
 
 
@@ -226,6 +240,8 @@ public class Recursion{
 		System.out.println(decToBinary(63));
         System.out.println(cannonball(3));
 		System.out.println(cannonball(2));
+        System.out.println(isReverse("cat", "cat"));
+        System.out.println(isReverse("cat", "tac"));
 
     }
 }
