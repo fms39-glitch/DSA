@@ -22,11 +22,11 @@
 
 // Big O notation.
 //    - It is represented by big O.
-//    1) O(1)   eg. In the linear search the n(number of elements)
+//    1) O(n)   eg. In the linear search the n(number of operations)
 //      will increases, 
 //    2) O(log n)  eg. Binary Search --> The O notation will be between O(1) - O(n), 
 //      what is between tem it's O(log n)
-//    3) O() 
+//    3) O(n^2) nested for loop
 //    4) O()  
 //    5) O()  
 //    6) O()   
