@@ -31,3 +31,26 @@
 //    5) O()  
 //    6) O()   
 
+
+
+// for (i=0; i<n; ++i){
+//    print(hi)  }     t(n) = 1+3(n)
+
+
+// for (i=0; i<n; i+=2){    eg. n = 4; t(n) = 7 
+//    ++x  }     t(n) = 1+3(n/2)
+
+
+// for (i=0; i<=n; i *= 2){ 
+//    print(hi)  }     t(n) = 1+3(log2 (n))
+
+
+// t(n) = 1+2n+4n^2 or t(n) = 1+6n^2
+// Matrix of size nxn 
+	public static void twoDimMatrix(int[][] matrix) {
+		for (int i = 0; i <= matrix.length-1; ++i) {
+			for (int j = 0; j <= matrix[i].length-1; ++j) {
+				System.out.println(matrix[i][j]);
+			}
+		}
+	}
