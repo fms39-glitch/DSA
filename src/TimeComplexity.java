@@ -44,6 +44,8 @@
 // for (i=0; i<=n; i *= 2){ 
 //    print(hi)  }     t(n) = 1+3(log2 (n))
 
+//T(n) = number of steps
+//n = input of size 'n'
 
 // t(n) = 1+2n+4n^2 or t(n) = 1+6n^2
 // Matrix of size nxn 
