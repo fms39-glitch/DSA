@@ -1,0 +1,190 @@
+package linkedList;
+
+/** Exercise iterating over linked lists **/
+public class Exercises {
+
+	/** Hint: countFoward / countBackward **/	
+	public static void printListTailToHead (Link h) {
+		if(h == null) {
+			return;
+		}
+		printListTailToHead(h.next);
+		System.out.print(h.value + " ");
+	}
+	
+	//2
+	public static String concat (Link head) {
+		String result = "";
+		Link c = head;
+		while(c!=null) {
+			result +=c.value;
+			c = c.next;
+		}
+		return result;
+	}
+	
+	public static String recConcat (Link h) {
+		if(h == null) {
+			return "";
+		}
+		return h.value + recConcat(h.next) ; // STUB
+	}
+	
+	public static int addNumbers (Link n1, Link n2) {
+		Link a = n1;
+		Link b = n2;
+		int sum=0;
+		int place=1;
+		int carry = 0;
+		// STUB
+		while (a != null || b!=null || carry != 0) {
+			int dig1 = (a != null) ? a.value:0;
+			int dig2 = (b != null) ? b.value:0;
+			int total = dig1+dig2+carry;
+			
+			carry = total/10;
+			sum += (total%10)*place;
+			place *= 10;
+			
+			if(a!=null) a=a.next;
+			if(b!=null) b=b.next;
+		}
+		
+		return sum;
+	}
+	
+	//public static Link merge (Link l1, Link l2) {
+	//	if(l1== null || l2 == null) {
+	//		return l1 == null ? l2:l1;
+	//	}
+	//	if(l1.value <= l2.value) {
+	//		l1.next = merge(l1.next, l2);
+	//		return l1;
+	//	}
+	//	l2.next = merge(l1, l2.next);
+	//	return l2;
+	//	 // STUB
+//	}
+	
+		public static Link merge(Link l1, Link l2) {
+		    // Dummy node serves as a fixed starting anchor for the new list
+		    Link dummy = new Link(0, null);
+		    Link tail = dummy;
+
+		    // Traverse both lists and attach the smaller node to tail
+		    while (l1 != null && l2 != null) {
+		        if (l1.value <= l2.value) {
+		            tail.next = l1;
+		            l1 = l1.next;
+		        } else {
+		            tail.next = l2;
+		            l2 = l2.next;
+		        }
+		        tail = tail.next; // Move tail forward
+		    }
+		    if (l1 != null) {
+		        tail.next = l1;
+		    } else {
+		        tail.next = l2;
+		    }
+
+		    // Skip the dummy node and return the actual merged head
+		    return dummy.next;
+		}
+
+	
+	
+	//VVIMP Question
+	public static Link reverseList(Link head) {
+	    Link previous = null;
+	    Link current = head;
+
+	    while (current != null) {
+	        Link next = current.next;
+	        current.next = previous;
+	        previous = current;
+	        current = next;
+	    }
+	    return previous;
+	}
+	
+	
+	
+	public static Link oddEvenList(Link head) {
+	    if (head == null || head.next == null) {
+	        return head; // List with 0 or 1 element is already sorted
+	    }
+	    // Dummy heads to build the two sub-lists easily
+	    Link oddDummy = new Link(0, null);
+	    Link evenDummy = new Link(0, null);
+	    // Moving pointers for both sub-lists
+	    Link oddTail = oddDummy;
+	    Link evenTail = evenDummy;
+
+	    Link curr = head;
+	    while (curr != null) {
+	        if (curr.value % 2 != 0) { 
+	            // Odd value -> append to odd chain
+	            oddTail.next = curr;
+	            oddTail = oddTail.next;
+	        } else {
+	            // Even value -> append to even chain
+	            evenTail.next = curr;
+	            evenTail = evenTail.next;
+	        }
+	        curr = curr.next;
+	    }
+
+	    // Crucial: Terminate the even list to prevent cycle errors
+	    evenTail.next = null;
+
+	    // Connect the end of the odd list to the start of the even list
+	    oddTail.next = evenDummy.next;
+
+	    // Return the head of the combined list (skipping the odd dummy node)
+	    return oddDummy.next;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Homework 02b - Linked lists");
+		Link head = new Link(5, new Link(2, new Link(1, null)));
+		Link h = new Link(23, new Link(5, new Link(80, null)));
+		
+		//2 cases for 1st Method
+		printListTailToHead(head);
+		System.out.println();
+		printListTailToHead(h);
+		//2 Cases for 2nd Method
+		System.out.println();
+		System.out.println(concat(head));
+		System.out.println(concat(h));
+		// 2 cases for 3rd method
+		System.out.println(recConcat(h));
+		System.out.println(recConcat(head));
+		// 2 cases for 4th method
+		System.out.println(addNumbers (h, head));
+		System.out.println(addNumbers (h, h));
+		
+		//2 cases for 5th method
+		Link m1_a = new Link(1, new Link(3, new Link(5, null)));
+	    Link m1_b = new Link(2, new Link(4, new Link(6, null)));
+	    System.out.println(concat(merge(m1_a, m1_b)));// Output: 123456
+	    Link m2_a = new Link(1, new Link(2, new Link(8, null)));
+	    Link m2_b = new Link(3, new Link(4, null));
+	    System.out.println(concat(merge(m2_a, m2_b)));// Output: 12348
+		
+		// 2 cases for 6th method
+		System.out.println(concat(reverseList(head)));
+		System.out.println(concat(reverseList(h)));
+		
+		//2 cases for 7th method
+		Link oe1 = new Link(1, new Link(3, new Link(2, null)));
+		Link oe2 = new Link(2, new Link(3, new Link(2, null)));
+		System.out.println(concat(oddEvenList(oe1)));// Output: 132
+		System.out.println(concat(oddEvenList(oe2)));// Output: 132
+	
+		
+		
+	}
+
+}
