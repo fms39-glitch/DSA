@@ -1,10 +1,10 @@
 import java.util.*;
 public class Bubble {
     public static int[] bubble(int[] a) {
-        // Fixed: replaced commas with semicolons and corrected "length"
+
         for (int i = 0; i < a.length; i++) {
             for (int j = 1; j < a.length - i; j++) {
-                // Fixed: Corrected the element comparison and swap sequence
+
                 if (a[j-1] > a[j]) {
                     int temp = a[j-1];
                     a[j-1] = a[j];
